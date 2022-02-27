@@ -2,6 +2,8 @@
 
 ### v0.1.3-dev
 
+- [NEW] Dismiss all posts functionality added to PostList component @christianmotta
+- [NEW] Dismiss functionality added to Post component @christianmotta
 - [NEW] Show more functionality added @christianmotta
 - [ENH] Image external link added @christianmotta
 

@@ -36,6 +36,11 @@ const reducer = (state = initialState, action: PostAction): PostState => {
           (post) => post.id !== action.payload.postId
         ),
       };
+    case actionTypes.DISMISS_ALL_POSTS:
+      return {
+        ...state,
+        postList: [],
+      };
     default:
       return state;
   }

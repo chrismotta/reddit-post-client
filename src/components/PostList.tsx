@@ -1,13 +1,16 @@
 import { Box, Button, Flex, Heading, Image } from "@chakra-ui/react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Dispatch } from "redux";
 
 import Post from "./Post";
 import RedditLogo from "../utils/reddit_logo.svg";
 import useFetchPosts from "../hooks/useFetchPosts";
 import PostSkeleton from "./PostSkeleton";
+import { dismissAllPosts } from "../store/actions";
 
 function PostList() {
   const { getPosts } = useFetchPosts();
+  const dispatch: Dispatch<PostAction> = useDispatch();
   const { postList, selectedPostId, isLoading } = useSelector(
     (state: PostState) => ({
       postList: state.postList,
@@ -16,6 +19,7 @@ function PostList() {
     })
   );
 
+  const handleDismissAll = () => dispatch(dismissAllPosts());
   const handleShowMore = () => getPosts();
 
   return (
@@ -25,7 +29,13 @@ function PostList() {
         <Heading size="md">Top Reddit Posts</Heading>
       </Flex>
       <Box overflow="initial">
-        <Button size="sm" w="full" disabled={isLoading} colorScheme="pink">
+        <Button
+          size="sm"
+          w="full"
+          disabled={isLoading || !postList.length}
+          colorScheme="pink"
+          onClick={handleDismissAll}
+        >
           Dismiss All Posts
         </Button>
       </Box>
