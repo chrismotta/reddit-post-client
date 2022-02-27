@@ -1,5 +1,7 @@
 import { Flex } from "@chakra-ui/react";
 
+import PostList from "./PostList";
+
 function SideBar() {
   return (
     <Flex
@@ -10,7 +12,7 @@ function SideBar() {
       flexDir="column"
       boxShadow="lg"
     >
-      SideBar
+      <PostList />
     </Flex>
   );
 }

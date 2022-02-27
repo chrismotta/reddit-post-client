@@ -8,27 +8,29 @@ import {
   DrawerContent,
   DrawerCloseButton,
   useDisclosure,
-  Button,
   IconButton,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
+import PostList from "./PostList";
+
 function PostListDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef<any>(null!);
-
+  //TODO: make it inside scrollable
   return (
     <>
       <IconButton
         aria-label="Show Post List"
-        variant="outline"
         icon={<HamburgerIcon />}
         ref={btnRef}
         onClick={onOpen}
-        pos="sticky"
+        pos="absolute"
         top="10px"
         left="10px"
         size="md"
+        bg="whiteAlpha.600"
+        shadow="md"
       />
       <Drawer
         isOpen={isOpen}
@@ -42,7 +44,9 @@ function PostListDrawer() {
           <DrawerCloseButton />
           {/* <DrawerHeader>Create your account</DrawerHeader> */}
 
-          <DrawerBody>{/* <PostList /> */}SideBar</DrawerBody>
+          <DrawerBody>
+            <PostList />
+          </DrawerBody>
         </DrawerContent>
       </Drawer>
     </>
