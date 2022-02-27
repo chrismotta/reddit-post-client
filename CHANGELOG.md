@@ -2,6 +2,8 @@
 
 ### v0.1.2-dev
 
+- [NEW] Creating types that will be needed @christianmotta
+
 ### v0.1.1
 
 - [NEW] Layout ready @christianmotta

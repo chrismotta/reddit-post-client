@@ -1,0 +1,6 @@
+export const LOAD_POSTS = "LOAD_POSTS";
+export const LOAD_POSTS_SUCCESS = "LOAD_POSTS_SUCCESS";
+export const LOAD_POSTS_FAILURE = "LOAD_POSTS_FAILURE";
+export const OPEN_POST = "OPEN_POST";
+export const DISMISS_POST = "DISMISS_POST";
+export const DISMISS_ALL_POSTS = "DISMISS_ALL_POSTS";
