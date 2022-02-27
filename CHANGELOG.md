@@ -1,6 +1,12 @@
 ## `Reddit Post Client`
 
-### v0.1.3-dev
+### v0.1.4-dev
+
+### v0.1.3
+
+> In this version, all the requested functionalities are implemented: Post Dismiss, Dismiss All, Show All and Read/Unread state indicator.
+>
+> I just had to deal with default opened post in order to consider it as read. For that reason, I added a map in two of the actions in the reducer. I could have left no default post to make it easier buy I like how the app looks with that. I'll try to improve this if I have the time.
 
 - [NEW] Unread status added to Post component and reducer @christianmotta
 - [NEW] Dismiss all posts functionality added to PostList component @christianmotta
