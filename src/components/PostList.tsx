@@ -1,11 +1,15 @@
-import { Box, Button, Flex, Heading } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Image } from "@chakra-ui/react";
 
 import Post from "./Post";
+import RedditLogo from "../utils/reddit_logo.svg";
 
 function PostList() {
   return (
     <Flex flexDir="column" gap="10px" overflow="hidden">
-      <Heading size="md">Top Reddit Posts</Heading>
+      <Flex gap="10px" p="10px 5px">
+        <Image src={RedditLogo} alt="Reddit Logo" />
+        <Heading size="md">Top Reddit Posts</Heading>
+      </Flex>
       <Box overflow="initial">
         <Button size="sm" w="full">
           Dismiss All

@@ -2,6 +2,7 @@
 
 ### v0.1.1-dev
 
+- [ENH] Some layout fixes @christianmotta
 - [NEW] PostDetail layout @christianmotta
 - [NEW] PostList and Post components layout @christianmotta
 - [NEW] Creating a responsive layout using ChakraUI @christianmotta
