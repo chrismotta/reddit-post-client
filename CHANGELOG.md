@@ -2,6 +2,7 @@
 
 ### v0.1.4-dev
 
+- [ENH] Fade in transition added to Post and PostReview component @christianmotta
 - [ENH] Fade out transition added to Post component using Framer @christianmotta
 
 ### v0.1.3

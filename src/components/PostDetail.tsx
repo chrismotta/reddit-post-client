@@ -1,4 +1,5 @@
-import { Box, Flex, Heading, Spacer } from "@chakra-ui/react";
+import { Box, Flex, forwardRef, Heading, Spacer } from "@chakra-ui/react";
+import { isValidMotionProp, motion } from "framer-motion";
 import { useSelector } from "react-redux";
 
 import EmptyPostDetail from "./EmptyPostDetail";
@@ -15,7 +16,19 @@ function PostDetail() {
   }
 
   return (
-    <Flex w="full" flexGrow="1" justifyContent="center">
+    <MotionFlex
+      w="full"
+      flexGrow="1"
+      justifyContent="center"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={{
+        in: { opacity: 1 },
+        out: { opacity: 0 },
+      }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+    >
       <Flex
         flexDir="column"
         align="center"
@@ -48,8 +61,16 @@ function PostDetail() {
           {selectedPost.title}
         </Box>
       </Flex>
-    </Flex>
+    </MotionFlex>
   );
 }
+const MotionFlex = motion(
+  forwardRef((props, ref) => {
+    const chakraProps = Object.fromEntries(
+      Object.entries(props).filter(([key]) => !isValidMotionProp(key))
+    );
+    return <Flex ref={ref} {...chakraProps} />;
+  })
+);
 
 export default PostDetail;
