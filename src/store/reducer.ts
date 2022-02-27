@@ -24,6 +24,11 @@ const reducer = (state = initialState, action: PostAction): PostState => {
         isLoading: false,
         error: null,
       };
+    case actionTypes.OPEN_POST:
+      return {
+        ...state,
+        selectedPostId: action.payload.postId,
+      };
     default:
       return state;
   }

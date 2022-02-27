@@ -1,50 +1,53 @@
-import { Box, Flex, Heading, Image, Spacer, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Spacer } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
+
+import EmptyPostDetail from "./EmptyPostDetail";
+import ImageContainer from "./ImageContainer";
+import NoImageContainer from "./NoImageContainer";
 
 function PostDetail() {
-  return (
-    <Flex
-      flexDir="column"
-      align="center"
-      m="20px"
-      bg="whiteAlpha.600"
-      flexGrow="1"
-      borderRadius="10px"
-      gap="10px"
-    >
-      <Heading size="md" pt="10px" px="20px">
-        Creator
-      </Heading>
+  const selectedPost: IPost | undefined = useSelector((state: PostState) =>
+    state.postList.find((post) => post.id === state.selectedPostId)
+  );
 
-      <Box
-        h="500px"
-        w="full"
-        backgroundImage="url('https://bit.ly/dan-abramov')"
-        backgroundPosition="center"
-        backgroundSize="cover"
+  if (!selectedPost) {
+    return <EmptyPostDetail />;
+  }
+
+  return (
+    <Flex w="full" flexGrow="1" justifyContent="center">
+      <Flex
+        flexDir="column"
+        align="center"
+        m="20px"
+        bg="whiteAlpha.600"
+        borderRadius="10px"
+        gap="10px"
+        flexGrow="1"
+        maxW="800px"
+        overflowY="auto"
       >
-        <Box w="full" h="full" bg="whiteAlpha.600" backdropFilter="blur(10px)">
-          <Image
-            boxSize="full"
-            objectFit="contain"
-            src="https://bit.ly/dan-abramov"
-            alt="Title"
-          />
+        <Heading size="md" pt="10px" px="20px">
+          {selectedPost.author}
+        </Heading>
+        {selectedPost.image && (
+          <ImageContainer src={selectedPost.image} isThumbnail={false} />
+        )}
+        {!selectedPost.image && selectedPost.thumbnail && (
+          <ImageContainer src={selectedPost.thumbnail} isThumbnail={true} />
+        )}
+
+        {!selectedPost.image && !selectedPost.thumbnail && <NoImageContainer />}
+
+        <Flex px="20px" w="full" fontSize="sm" color="gray.600">
+          <Box>{selectedPost.created}</Box>
+          <Spacer />
+          <Box>{selectedPost.numComments} comments</Box>
+        </Flex>
+        <Box h="300px" px="20px" w="full">
+          {selectedPost.title}
         </Box>
-      </Box>
-      <Flex px="20px" w="full" fontSize="sm" color="gray.600">
-        <Box>2 hours ago</Box>
-        <Spacer />
-        <Box>256 comments</Box>
       </Flex>
-      <Box h="300px" px="20px">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </Box>
     </Flex>
   );
 }

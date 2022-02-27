@@ -5,6 +5,7 @@ interface IPost {
   created: number;
   numComments: number;
   thumbnail?: string;
+  image?: string;
 }
 
 type PostList = IPost[];

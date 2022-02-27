@@ -23,18 +23,25 @@ const useFetchPosts = () => {
       );
       const { data } = await response.json();
       // console.log(data.children);
-      const posts: PostList = data.children.map(
-        ({
-          data: { name, title, author, created, num_comments, thumbnail },
-        }: any) => ({
-          id: name,
-          title,
-          author,
-          created: DateTime.fromSeconds(created).toRelative(),
-          numComments: num_comments,
-          thumbnail: thumbnail.includes("http") ? thumbnail : undefined,
-        })
-      );
+      const posts: PostList = data.children.map(({ data }: any) => {
+        const thumbnail = data.thumbnail.includes("http")
+          ? data.thumbnail
+          : undefined;
+        const image = data.url.includes("https://i.redd.it/")
+          ? data.url
+          : undefined;
+
+        return {
+          id: data.name,
+          title: data.title,
+          author: data.author,
+          created: DateTime.fromSeconds(data.created).toRelative(),
+          numComments: data.num_comments,
+          thumbnail,
+          image,
+        };
+      });
+      // console.table(posts);
       dispatch(loadPostSuccess(posts));
     } catch (error: any) {
       throw new Error("Function not implemented.");
