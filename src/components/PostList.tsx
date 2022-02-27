@@ -7,7 +7,7 @@ import useFetchPosts from "../hooks/useFetchPosts";
 import PostSkeleton from "./PostSkeleton";
 
 function PostList() {
-  useFetchPosts();
+  const { getPosts } = useFetchPosts();
   const { postList, selectedPostId, isLoading } = useSelector(
     (state: PostState) => ({
       postList: state.postList,
@@ -15,6 +15,8 @@ function PostList() {
       isLoading: state.isLoading,
     })
   );
+
+  const handleShowMore = () => getPosts();
 
   return (
     <Flex flexDir="column" gap="10px" overflow="hidden">
@@ -28,7 +30,7 @@ function PostList() {
         </Button>
       </Box>
       <Flex flexDir="column" gap="15px" overflowY="auto">
-        {isLoading ? (
+        {isLoading && !postList.length ? (
           <>
             {[...Array(10)].map((_, i) => (
               <PostSkeleton key={i} />
@@ -44,7 +46,12 @@ function PostList() {
               />
             ))}
             <Box overflow="initial">
-              <Button size="sm" w="full" colorScheme="purple">
+              <Button
+                size="sm"
+                w="full"
+                colorScheme="purple"
+                onClick={handleShowMore}
+              >
                 Show More Posts
               </Button>
             </Box>

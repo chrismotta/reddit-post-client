@@ -1,9 +1,10 @@
 import { useEffect } from "react";
-import { API_ENDPOINT, PAGE_SIZE } from "../utils/constants";
 import { Dispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
-import { loadPosts, loadPostSuccess } from "../store/actions";
 import { DateTime } from "luxon";
+
+import { API_ENDPOINT, PAGE_SIZE } from "../utils/constants";
+import { loadPosts, loadPostSuccess } from "../store/actions";
 
 const useFetchPosts = () => {
   const lastPostId: string | undefined = useSelector(

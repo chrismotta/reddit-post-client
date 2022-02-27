@@ -2,6 +2,7 @@
 
 ### v0.1.3-dev
 
+- [NEW] Show more functionality added @christianmotta
 - [ENH] Image external link added @christianmotta
 
 ### v0.1.2
