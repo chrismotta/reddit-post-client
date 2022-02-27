@@ -37,13 +37,11 @@ function PostListDrawer() {
         placement="left"
         onClose={onClose}
         finalFocusRef={btnRef}
-        size="xs"
+        size="sm"
       >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          {/* <DrawerHeader>Create your account</DrawerHeader> */}
-
           <DrawerBody>
             <PostList />
           </DrawerBody>

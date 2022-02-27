@@ -2,6 +2,10 @@
 
 ### v0.1.2-dev
 
+- [ENH] Selected post behavior added to list @christianmotta
+- [ENH] PostSkeleton created for loading state @christianmotta
+- [NEW] PostsList receiving data from the hook @christianmotta
+- [NEW] Custom hook created for handling data fetching @christianmotta
 - [NEW] Creating Redux store and actions @christianmotta
 - [NEW] Creating types that will be needed @christianmotta
 
