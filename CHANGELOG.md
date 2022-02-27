@@ -2,6 +2,8 @@
 
 ### v0.1.3-dev
 
+- [ENH] Image external link added @christianmotta
+
 ### v0.1.2
 
 - [ENH] UseFetchPost updated to prevent wrong image urls @christianmotta

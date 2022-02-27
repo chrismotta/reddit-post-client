@@ -1,4 +1,4 @@
-import { Box, Image } from "@chakra-ui/react";
+import { Box, Image, Link } from "@chakra-ui/react";
 
 type Props = {
   isThumbnail?: boolean;
@@ -14,12 +14,14 @@ function ImageContainer({ isThumbnail = false, src }: Props) {
       backgroundSize="cover"
     >
       <Box w="full" h="full" bg="whiteAlpha.600" backdropFilter="blur(10px)">
-        <Image
-          boxSize="full"
-          objectFit={isThumbnail ? "none" : "contain"}
-          src={src}
-          alt="Title"
-        />
+        <Link href={src} isExternal>
+          <Image
+            boxSize="full"
+            objectFit={isThumbnail ? "none" : "contain"}
+            src={src}
+            alt="Title"
+          />
+        </Link>
       </Box>
     </Box>
   );
