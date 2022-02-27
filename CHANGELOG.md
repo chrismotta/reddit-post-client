@@ -2,6 +2,7 @@
 
 ### v0.1.3-dev
 
+- [NEW] Unread status added to Post component and reducer @christianmotta
 - [NEW] Dismiss all posts functionality added to PostList component @christianmotta
 - [NEW] Dismiss functionality added to Post component @christianmotta
 - [NEW] Show more functionality added @christianmotta

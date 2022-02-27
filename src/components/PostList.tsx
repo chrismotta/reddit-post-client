@@ -53,6 +53,7 @@ function PostList() {
                 key={data.id}
                 data={data}
                 selected={data.id === selectedPostId}
+                opened={data.opened}
               />
             ))}
             <Box overflow="initial">

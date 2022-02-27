@@ -40,6 +40,7 @@ const useFetchPosts = () => {
           numComments: data.num_comments,
           thumbnail,
           image,
+          opened: false,
         };
       });
       // console.table(posts);

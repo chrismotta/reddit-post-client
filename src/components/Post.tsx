@@ -8,15 +8,15 @@ import {
   Spacer,
   Text,
 } from "@chakra-ui/react";
-import { DeleteIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { CheckIcon, DeleteIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
 
 import { dismissPost, openPost } from "../store/actions";
 
-type Props = { data: IPost; selected: boolean };
+type Props = { data: IPost; selected: boolean; opened: boolean };
 
-function Post({ data, selected }: Props) {
+function Post({ data, selected, opened }: Props) {
   const dispatch: Dispatch<PostAction> = useDispatch();
 
   const handleSelect = () => {
@@ -71,6 +71,7 @@ function Post({ data, selected }: Props) {
             {data.created} :: {data.numComments} comments
           </Text>
           <Spacer />
+          {opened && <CheckIcon fontSize="xs" />}
           <IconButton
             title="Dismiss Post"
             aria-label="Dismiss Post"

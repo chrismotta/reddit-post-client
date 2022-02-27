@@ -4,6 +4,7 @@ interface IPost {
   author: string;
   created: number;
   numComments: number;
+  opened: boolean;
   thumbnail?: string;
   image?: string;
 }
