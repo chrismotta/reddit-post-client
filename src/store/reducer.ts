@@ -29,6 +29,13 @@ const reducer = (state = initialState, action: PostAction): PostState => {
         ...state,
         selectedPostId: action.payload.postId,
       };
+    case actionTypes.DISMISS_POST:
+      return {
+        ...state,
+        postList: state.postList.filter(
+          (post) => post.id !== action.payload.postId
+        ),
+      };
     default:
       return state;
   }

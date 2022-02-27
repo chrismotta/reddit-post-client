@@ -1,3 +1,4 @@
+import { MouseEvent } from "react";
 import {
   Box,
   Center,
@@ -8,9 +9,10 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { DeleteIcon, ViewOffIcon } from "@chakra-ui/icons";
-import { openPost } from "../store/actions";
 import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
+
+import { dismissPost, openPost } from "../store/actions";
 
 type Props = { data: IPost; selected: boolean };
 
@@ -20,6 +22,11 @@ function Post({ data, selected }: Props) {
   const handleSelect = () => {
     dispatch(openPost(data.id));
   };
+  const handleDismiss = (e: MouseEvent) => {
+    e.stopPropagation();
+    dispatch(dismissPost(data.id));
+  };
+
   return (
     <Flex
       gap="10px"
@@ -70,6 +77,7 @@ function Post({ data, selected }: Props) {
             icon={<DeleteIcon />}
             size="xs"
             variant="ghost"
+            onClick={handleDismiss}
           />
         </Flex>
         <Box fontSize="sm" textAlign="left">
