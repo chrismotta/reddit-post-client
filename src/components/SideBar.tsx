@@ -11,6 +11,7 @@ function SideBar() {
       p="10px"
       flexDir="column"
       boxShadow="lg"
+      flex="0 0 auto"
     >
       <PostList />
     </Flex>

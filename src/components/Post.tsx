@@ -13,7 +13,9 @@ function Post() {
       />
       <Box>
         <Flex alignItems="baseline">
-          <Text fontSize="xs">2 hours ago :: 256 comments</Text>
+          <Text fontSize="xs" color="gray.600">
+            2 hours ago :: 256 comments
+          </Text>
           <Spacer />
           <IconButton
             aria-label="Show Post List"
