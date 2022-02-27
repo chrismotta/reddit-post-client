@@ -2,6 +2,7 @@
 
 ### v0.1.2-dev
 
+- [NEW] Creating Redux store and actions @christianmotta
 - [NEW] Creating types that will be needed @christianmotta
 
 ### v0.1.1

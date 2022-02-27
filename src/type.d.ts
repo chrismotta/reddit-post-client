@@ -1,5 +1,3 @@
-import * as actionTypes from "./store/actionTypes";
-
 interface IPost {
   id: string;
   title: string;
@@ -19,17 +17,17 @@ type PostState = {
   error: string | null;
 };
 
-// type PostAction = {
-//   type: string;
-//   payload: any;
-// };
+type PostAction = {
+  type: string;
+  payload: any;
+};
 
-export type PostAction =
-  | { type: typeof actionTypes.LOAD_POSTS; payload: any }
-  | { type: typeof actionTypes.LOAD_POSTS_SUCCESS; payload: any }
-  | { type: typeof actionTypes.LOAD_POSTS_FAILURE; payload: any }
-  | { type: typeof actionTypes.OPEN_POST; payload: any }
-  | { type: typeof actionTypes.DISMISS_POST; payload: any }
-  | { type: typeof actionTypes.DISMISS_ALL_POSTS; payload: any };
+// export type PostAction =
+//   | { type: typeof actionTypes.LOAD_POSTS; payload: any }
+//   | { type: typeof actionTypes.LOAD_POSTS_SUCCESS; payload: any }
+//   | { type: typeof actionTypes.LOAD_POSTS_FAILURE; payload: any }
+//   | { type: typeof actionTypes.OPEN_POST; payload: any }
+//   | { type: typeof actionTypes.DISMISS_POST; payload: any }
+//   | { type: typeof actionTypes.DISMISS_ALL_POSTS; payload: any };
 
 type Dispatch = (action: PostAction) => PostAction;
