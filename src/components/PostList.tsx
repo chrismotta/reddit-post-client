@@ -7,6 +7,7 @@ import RedditLogo from "../utils/reddit_logo.svg";
 import useFetchPosts from "../hooks/useFetchPosts";
 import PostSkeleton from "./PostSkeleton";
 import { dismissAllPosts } from "../store/actions";
+import { AnimatePresence } from "framer-motion";
 
 function PostList() {
   const { getPosts } = useFetchPosts();
@@ -47,7 +48,7 @@ function PostList() {
             ))}
           </>
         ) : (
-          <>
+          <AnimatePresence>
             {postList.map((data) => (
               <Post
                 key={data.id}
@@ -66,7 +67,7 @@ function PostList() {
                 Show More Posts
               </Button>
             </Box>
-          </>
+          </AnimatePresence>
         )}
       </Flex>
     </Flex>

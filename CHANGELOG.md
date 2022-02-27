@@ -2,6 +2,8 @@
 
 ### v0.1.4-dev
 
+- [ENH] Fade out transition added to Post component using Framer @christianmotta
+
 ### v0.1.3
 
 > In this version, all the requested functionalities are implemented: Post Dismiss, Dismiss All, Show All and Read/Unread state indicator.
