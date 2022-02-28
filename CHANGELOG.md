@@ -3,6 +3,7 @@
 ### v0.1.5-dev
 
 - [NEW] Render tests added for all components @christianmotta
+- [NEW] Testing mocks and wrappers created for @christianmotta
 - [NEW] Adding testing dependencies and some settings @christianmotta
 
 ### v0.1.4
