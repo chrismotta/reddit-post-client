@@ -1,9 +1,17 @@
 ## `Reddit Post Client`
 
-### v0.1.5-dev
+### v0.1.6-dev
+
+### v0.1.5
+
+> In the current version I added testing to the application. For that purpose I added Vitest, that is the native test framework for Vite projects, and I also added React Test Library, that is the library that I usually use to make integration / render tests.
+>
+> I created a basic mock and some wrappers, to allow me to test components that need to be connected to the Redux store and to Chakra theme provider.
+>
+> Finally I added a render test for each component, to make sure that the component is rendering correctly. This is just a first approach to make an integration test, and I may improve it in the future if I have the time, by adding async tests for checking the state of the application, and also fire some click events for checking the application response.
 
 - [NEW] Render tests added for all components @christianmotta
-- [NEW] Testing mocks and wrappers created for @christianmotta
+- [NEW] Testing mocks and wrappers created @christianmotta
 - [NEW] Adding testing dependencies and some settings @christianmotta
 
 ### v0.1.4
