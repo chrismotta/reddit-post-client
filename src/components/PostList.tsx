@@ -36,6 +36,7 @@ function PostList() {
           disabled={isLoading || !postList.length}
           colorScheme="pink"
           onClick={handleDismissAll}
+          _focus={{}}
         >
           Dismiss All Posts
         </Button>
@@ -66,6 +67,7 @@ function PostList() {
                 disabled={isLoading}
                 isLoading={isLoading}
                 loadingText="Loading Posts..."
+                _focus={{}}
               >
                 Show More Posts
               </Button>

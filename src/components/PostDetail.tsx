@@ -23,8 +23,7 @@ function PostDetail() {
     state.postList.find((post) => post.id === state.selectedPostId)
   );
 
-  const handleDismiss = (e: MouseEvent) => {
-    e.stopPropagation();
+  const handleDismiss = () => {
     if (selectedPost) {
       dispatch(dismissPost(selectedPost.id));
     }
@@ -73,6 +72,7 @@ function PostDetail() {
             top="0px"
             right="0px"
             onClick={handleDismiss}
+            _focus={{}}
           />
         </Center>
         {selectedPost.image && (

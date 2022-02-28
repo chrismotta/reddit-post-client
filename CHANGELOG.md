@@ -2,6 +2,8 @@
 
 ### v0.1.7-dev
 
+- [ENH] Buttons focus style enhanced @christianmotta
+- [FIX] SideBar menu button zIndex issue fixed @christianmotta
 - [ENH] Dismiss button added to PostReview @christianmotta
 - [ENH] Loading spinner added to Show More button @christianmotta
 - [FIX] Dismiss button alignment issue fixed @christianmotta

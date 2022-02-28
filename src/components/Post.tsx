@@ -90,6 +90,7 @@ function Post({ data, selected, opened }: Props) {
               size="xs"
               variant="ghost"
               onClick={handleDismiss}
+              _focus={{}}
             />
           </Flex>
           <Box fontSize="sm" textAlign="left">

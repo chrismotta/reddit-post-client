@@ -30,6 +30,8 @@ function PostListDrawer() {
         size="md"
         bg="whiteAlpha.600"
         shadow="md"
+        zIndex="1000"
+        _focus={{}}
       />
       <Drawer
         isOpen={isOpen}
@@ -40,7 +42,7 @@ function PostListDrawer() {
       >
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton />
+          <DrawerCloseButton _focus={{}} />
           <DrawerBody>
             <PostList />
           </DrawerBody>
