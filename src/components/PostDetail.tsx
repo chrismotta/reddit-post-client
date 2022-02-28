@@ -44,10 +44,18 @@ function PostDetail() {
           {selectedPost.author}
         </Heading>
         {selectedPost.image && (
-          <ImageContainer src={selectedPost.image} isThumbnail={false} />
+          <ImageContainer
+            src={selectedPost.image}
+            isThumbnail={false}
+            title={selectedPost.title}
+          />
         )}
         {!selectedPost.image && selectedPost.thumbnail && (
-          <ImageContainer src={selectedPost.thumbnail} isThumbnail={true} />
+          <ImageContainer
+            src={selectedPost.thumbnail}
+            isThumbnail={true}
+            title={selectedPost.title}
+          />
         )}
 
         {!selectedPost.image && !selectedPost.thumbnail && <NoImageContainer />}

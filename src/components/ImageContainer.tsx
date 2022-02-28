@@ -3,8 +3,9 @@ import { Box, Image, Link } from "@chakra-ui/react";
 type Props = {
   isThumbnail?: boolean;
   src?: string;
+  title?: string;
 };
-function ImageContainer({ isThumbnail = false, src }: Props) {
+function ImageContainer({ isThumbnail = false, src = "", title = "" }: Props) {
   return (
     <Box
       h="500px"
@@ -19,7 +20,8 @@ function ImageContainer({ isThumbnail = false, src }: Props) {
             boxSize="full"
             objectFit={isThumbnail ? "none" : "contain"}
             src={src}
-            alt="Title"
+            alt={title}
+            title={title}
           />
         </Link>
       </Box>

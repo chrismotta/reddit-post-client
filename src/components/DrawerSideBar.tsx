@@ -2,8 +2,6 @@ import { useRef } from "react";
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
@@ -21,7 +19,8 @@ function PostListDrawer() {
   return (
     <>
       <IconButton
-        aria-label="Show Post List"
+        aria-label="Show Posts List"
+        title="Show Posts List"
         icon={<HamburgerIcon />}
         ref={btnRef}
         onClick={onOpen}

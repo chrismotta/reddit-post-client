@@ -2,7 +2,7 @@ interface IPost {
   id: string;
   title: string;
   author: string;
-  created: number;
+  created: string;
   numComments: number;
   opened: boolean;
   thumbnail?: string;
