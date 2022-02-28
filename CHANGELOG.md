@@ -1,6 +1,15 @@
 ## `Reddit Post Client`
 
-### v0.1.6-dev
+### v0.1.7-dev
+
+### v0.1.6
+
+> The application is deployed with Vercel. I only had to add @types/node and the deployment process was successful.
+>
+> I will be checking for some small code improvements and I think the exercise is complete.
+
+- [CHG] Readme file updated with demo information @christianmotta
+- [NEW] Added @types/node (required for deployment) @christianmotta
 
 ### v0.1.5
 

@@ -1,6 +1,12 @@
-## `Reddit Post Client`
+# `Reddit Post Client`
 
-> See the [CHANGELOG.md] for development details.
+> For all development details please see [CHANGELOG.md](https://github.com/hipercubus/reddit-post-client/blob/main/CHANGELOG.md)
+
+## Demo
+
+A functional demo is deployed with Vercel. Please follow this link [https://reddit-post-client.vercel.app/](https://reddit-post-client.vercel.app/)
+
+## Documentation
 
 ### Requirements
 
