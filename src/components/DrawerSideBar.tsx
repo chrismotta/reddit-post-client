@@ -15,7 +15,7 @@ import PostList from "./PostList";
 function PostListDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef<any>(null!);
-  //TODO: make it inside scrollable
+
   return (
     <>
       <IconButton
@@ -43,7 +43,7 @@ function PostListDrawer() {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton _focus={{}} />
-          <DrawerBody>
+          <DrawerBody overflow="hidden">
             <PostList />
           </DrawerBody>
         </DrawerContent>

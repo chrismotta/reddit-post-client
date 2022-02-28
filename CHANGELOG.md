@@ -2,6 +2,7 @@
 
 ### v0.1.7-dev
 
+- [FIX] Inside scroll issue on DrawerSideBar fixed @christianmotta
 - [ENH] Buttons focus style enhanced @christianmotta
 - [FIX] SideBar menu button zIndex issue fixed @christianmotta
 - [ENH] Dismiss button added to PostReview @christianmotta

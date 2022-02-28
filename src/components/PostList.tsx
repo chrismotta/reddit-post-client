@@ -24,7 +24,7 @@ function PostList() {
   const handleShowMore = () => getPosts();
 
   return (
-    <Flex flexDir="column" gap="10px" overflow="hidden">
+    <Flex flexDir="column" gap="10px" overflow="hidden" h="full">
       <Flex gap="10px" p="10px 5px">
         <Image src={RedditLogo} alt="Reddit Logo" />
         <Heading size="md">Top Reddit Posts</Heading>
