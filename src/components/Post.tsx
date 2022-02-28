@@ -19,7 +19,7 @@ type Props = {
   data: IPost;
   selected: boolean;
   opened: boolean;
-  onSelect: () => void | undefined;
+  onSelect?: () => void;
 };
 
 function Post({ data, selected, opened, onSelect }: Props) {

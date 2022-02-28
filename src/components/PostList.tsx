@@ -10,7 +10,7 @@ import { dismissAllPosts } from "../store/actions";
 import { AnimatePresence } from "framer-motion";
 
 type Props = {
-  onSelect: () => void | undefined;
+  onSelect?: () => void;
 };
 function PostList({ onSelect }: Props) {
   const { getPosts } = useFetchPosts();
@@ -27,7 +27,7 @@ function PostList({ onSelect }: Props) {
   const handleShowMore = () => getPosts();
 
   return (
-    <Flex flexDir="column" gap="10px" overflow="hidden" h="full">
+    <Flex flexDir="column" gap="f10px" overflow="hidden" h="full">
       <Flex gap="10px" p="10px 5px">
         <Image src={RedditLogo} alt="Reddit Logo" />
         <Heading size="md">Top Reddit Posts</Heading>
@@ -59,7 +59,7 @@ function PostList({ onSelect }: Props) {
                 data={data}
                 selected={data.id === selectedPostId}
                 opened={data.opened}
-                onSelect={onSelect}
+                onSelect={onSelect ?? undefined}
               />
             ))}
             <Box overflow="initial">
