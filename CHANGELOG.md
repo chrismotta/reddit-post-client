@@ -2,6 +2,8 @@
 
 ### v0.1.5-dev
 
+- [NEW] Adding testing dependencies and some settings @christianmotta
+
 ### v0.1.4
 
 > In this version, I just added the transitions, an some other minor changes. I used Framer Motion to do it.
