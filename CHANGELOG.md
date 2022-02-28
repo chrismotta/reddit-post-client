@@ -2,6 +2,7 @@
 
 ### v0.1.7-dev
 
+- [ENH] Api file created to isolate fetch functionality @christianmotta
 - [FIX] Inside scroll issue on DrawerSideBar fixed @christianmotta
 - [ENH] Buttons focus style enhanced @christianmotta
 - [FIX] SideBar menu button zIndex issue fixed @christianmotta

@@ -3,8 +3,14 @@ import { Dispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
 import { DateTime } from "luxon";
 
-import { API_ENDPOINT, PAGE_SIZE } from "../utils/constants";
+import {
+  API_ENDPOINT,
+  IMAGE_PREFIX,
+  PAGE_SIZE,
+  THUMBNAIL_PREFIX,
+} from "../utils/constants";
 import { loadPosts, loadPostSuccess } from "../store/actions";
+import { fetchPosts } from "../lib/api";
 
 const useFetchPosts = () => {
   const lastPostId: string | undefined = useSelector(
@@ -18,36 +24,26 @@ const useFetchPosts = () => {
 
   const getPosts = async () => {
     dispatch(loadPosts());
-    try {
-      const response = await fetch(
-        `${API_ENDPOINT}?after=${lastPostId}&limit=${PAGE_SIZE}`
-      );
-      const { data } = await response.json();
-      // console.log(data.children);
-      const posts: PostList = data.children.map(({ data }: any) => {
-        const thumbnail = data.thumbnail.includes("http")
-          ? data.thumbnail
-          : undefined;
-        const image = data.url.includes("https://i.redd.it/")
-          ? data.url
-          : undefined;
 
-        return {
-          id: data.name,
-          title: data.title,
-          author: data.author,
-          created: DateTime.fromSeconds(data.created).toRelative(),
-          numComments: data.num_comments,
-          thumbnail,
-          image,
-          opened: false,
-        };
-      });
-      // console.table(posts);
-      dispatch(loadPostSuccess(posts));
-    } catch (error: any) {
-      throw new Error("Function not implemented.");
-    }
+    const data = await fetchPosts(lastPostId);
+    const posts: PostList = data.children.map(({ data }: any) => {
+      const thumbnail = data.thumbnail.includes(THUMBNAIL_PREFIX)
+        ? data.thumbnail
+        : undefined;
+      const image = data.url.includes(IMAGE_PREFIX) ? data.url : undefined;
+
+      return {
+        id: data.name,
+        title: data.title,
+        author: data.author,
+        created: DateTime.fromSeconds(data.created).toRelative(),
+        numComments: data.num_comments,
+        thumbnail,
+        image,
+        opened: false,
+      };
+    });
+    dispatch(loadPostSuccess(posts));
   };
 
   return { getPosts };

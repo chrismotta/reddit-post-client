@@ -11,9 +11,9 @@ import {
 import { CheckIcon, DeleteIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch } from "react-redux";
 import { Dispatch } from "redux";
+import { motion } from "framer-motion";
 
 import { dismissPost, openPost } from "../store/actions";
-import { motion } from "framer-motion";
 
 type Props = { data: IPost; selected: boolean; opened: boolean };
 
