@@ -1,6 +1,14 @@
 ## `Reddit Post Client`
 
-### v0.1.4-dev
+### v0.1.5-dev
+
+### v0.1.4
+
+> In this version, I just added the transitions, an some other minor changes. I used Framer Motion to do it.
+>
+> In PostDetail component I used the 'forwardRef' method included in Framer lib, in order to create a hybrid component keeping Chakra functionalities.
+>
+> I'm creating a new version with just this changes because the UI seems to be complete. So I'm going to start with the testing and deployment, and after that I'll make a code review.
 
 - [ENH] Fade in transition added to Post and PostReview component @christianmotta
 - [ENH] Fade out transition added to Post component using Framer @christianmotta
