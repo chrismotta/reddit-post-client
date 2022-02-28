@@ -6,6 +6,16 @@ const initialState: PostState = {
   error: null,
 };
 
+const updateReadPosts = (list: PostList, postId: string): PostList => {
+  return list.map((post: IPost) => {
+    if (post.id !== postId) return post;
+    return {
+      ...post,
+      opened: true,
+    };
+  });
+};
+
 const reducer = (state = initialState, action: PostAction): PostState => {
   switch (action.type) {
     case actionTypes.LOAD_POSTS:
@@ -14,16 +24,14 @@ const reducer = (state = initialState, action: PostAction): PostState => {
         isLoading: true,
         error: null,
       };
+
     case actionTypes.LOAD_POSTS_SUCCESS:
       const newPostList: PostList = state.selectedPostId
         ? action.payload.postList
-        : action.payload.postList.map((post: IPost) => {
-            if (post.id !== action.payload.postList[0].id) return post;
-            return {
-              ...post,
-              opened: true,
-            };
-          });
+        : updateReadPosts(
+            action.payload.postList,
+            action.payload.postList[0].id
+          );
       return {
         ...state,
         postList: [...state.postList, ...newPostList],
@@ -33,18 +41,14 @@ const reducer = (state = initialState, action: PostAction): PostState => {
         isLoading: false,
         error: null,
       };
+
     case actionTypes.OPEN_POST:
       return {
         ...state,
         selectedPostId: action.payload.postId,
-        postList: state.postList.map((post: IPost) => {
-          if (post.id !== action.payload.postId) return post;
-          return {
-            ...post,
-            opened: true,
-          };
-        }),
+        postList: updateReadPosts(state.postList, action.payload.postId),
       };
+
     case actionTypes.DISMISS_POST:
       return {
         ...state,
@@ -52,11 +56,13 @@ const reducer = (state = initialState, action: PostAction): PostState => {
           (post) => post.id !== action.payload.postId
         ),
       };
+
     case actionTypes.DISMISS_ALL_POSTS:
       return {
         ...state,
         postList: [],
       };
+
     default:
       return state;
   }

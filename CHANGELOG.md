@@ -1,7 +1,14 @@
 ## `Reddit Post Client`
 
-### v0.1.7-dev
+### v0.1.8-dev
 
+### v0.1.7
+
+> I made a final revision to the code and a little testing. I found a few little bugs and I fixed them.
+>
+> I also made some style and code improvements that I had left as low priority.
+
+- [ENH] Pure function created in reducer to avoid duplicated code @christianmotta
 - [ENH] Api file created to isolate fetch functionality @christianmotta
 - [FIX] Inside scroll issue on DrawerSideBar fixed @christianmotta
 - [ENH] Buttons focus style enhanced @christianmotta

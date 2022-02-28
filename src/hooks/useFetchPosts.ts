@@ -3,12 +3,7 @@ import { Dispatch } from "redux";
 import { useDispatch, useSelector } from "react-redux";
 import { DateTime } from "luxon";
 
-import {
-  API_ENDPOINT,
-  IMAGE_PREFIX,
-  PAGE_SIZE,
-  THUMBNAIL_PREFIX,
-} from "../utils/constants";
+import { IMAGE_PREFIX, THUMBNAIL_PREFIX } from "../utils/constants";
 import { loadPosts, loadPostSuccess } from "../store/actions";
 import { fetchPosts } from "../lib/api";
 
