@@ -3,10 +3,12 @@ export const post: IPost = {
   title:
     "Ukrainian President Zelenskyy having a meal with his soldiers. A genuine leader for the people.",
   author: "-Zepphyrrez-",
-  created: "hace 13 horas",
+  created: "13 hours ago",
   numComments: 3023,
   thumbnail:
     "https://b.thumbs.redditmedia.com/WUyR2jZ6MHD1bxAHHSqSbZaVQLRmoaBxrSqm9pmLbfI.jpg",
   image: "https://i.redd.it/khzw5r5xugk81.jpg",
   opened: false,
 };
+
+export const postList: PostList = [post];
