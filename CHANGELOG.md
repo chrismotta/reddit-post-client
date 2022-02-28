@@ -22,6 +22,7 @@
 >
 > I'm creating a new version with just this changes because the UI seems to be complete. So I'm going to start with the testing and deployment, and after that I'll make a code review.
 
+- [NEW] Readme file added @christianmotta
 - [ENH] Fade in transition added to Post and PostReview component @christianmotta
 - [ENH] Fade out transition added to Post component using Framer @christianmotta
 
