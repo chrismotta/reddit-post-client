@@ -9,7 +9,10 @@ import PostSkeleton from "./PostSkeleton";
 import { dismissAllPosts } from "../store/actions";
 import { AnimatePresence } from "framer-motion";
 
-function PostList() {
+type Props = {
+  onSelect: () => void | undefined;
+};
+function PostList({ onSelect }: Props) {
   const { getPosts } = useFetchPosts();
   const dispatch: Dispatch<PostAction> = useDispatch();
   const { postList, selectedPostId, isLoading } = useSelector(
@@ -41,7 +44,7 @@ function PostList() {
           Dismiss All Posts
         </Button>
       </Box>
-      <Flex flexDir="column" gap="15px" overflowY="auto">
+      <Flex flexDir="column" gap="15px" overflowY="auto" overflowX="hidden">
         {isLoading && !postList.length ? (
           <>
             {[...Array(10)].map((_, i) => (
@@ -56,6 +59,7 @@ function PostList() {
                 data={data}
                 selected={data.id === selectedPostId}
                 opened={data.opened}
+                onSelect={onSelect}
               />
             ))}
             <Box overflow="initial">

@@ -14,10 +14,10 @@ function EmptyPostDetail() {
         maxW="800px"
       >
         <ViewOffIcon boxSize="100px" color="gray.300" mb="10px" />
-        <Heading size="lg" color="gray.300">
+        <Heading size="lg" color="gray.300" textAlign="center">
           No post selected
         </Heading>
-        <Heading size="sm" color="gray.300">
+        <Heading size="sm" color="gray.300" textAlign="center">
           Select a post from the side bar to open it
         </Heading>
       </Center>

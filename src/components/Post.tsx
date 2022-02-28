@@ -15,12 +15,20 @@ import { motion } from "framer-motion";
 
 import { dismissPost, openPost } from "../store/actions";
 
-type Props = { data: IPost; selected: boolean; opened: boolean };
+type Props = {
+  data: IPost;
+  selected: boolean;
+  opened: boolean;
+  onSelect: () => void | undefined;
+};
 
-function Post({ data, selected, opened }: Props) {
+function Post({ data, selected, opened, onSelect }: Props) {
   const dispatch: Dispatch<PostAction> = useDispatch();
 
   const handleSelect = () => {
+    if (onSelect) {
+      onSelect();
+    }
     dispatch(openPost(data.id));
   };
   const handleDismiss = (e: MouseEvent) => {
@@ -42,7 +50,7 @@ function Post({ data, selected, opened }: Props) {
       <Flex
         gap="10px"
         pb="8px"
-        onClick={!selected ? handleSelect : undefined}
+        onClick={handleSelect}
         bg={selected ? "gray.200" : "transparent"}
         cursor={selected ? "default" : "pointer"}
         transition="all 0.2s cubic-bezier(.08,.52,.52,1)"

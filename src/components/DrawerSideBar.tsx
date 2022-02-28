@@ -44,7 +44,7 @@ function PostListDrawer() {
         <DrawerContent>
           <DrawerCloseButton _focus={{}} />
           <DrawerBody overflow="hidden">
-            <PostList />
+            <PostList onSelect={onClose} />
           </DrawerBody>
         </DrawerContent>
       </Drawer>

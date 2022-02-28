@@ -1,6 +1,12 @@
 ## `Reddit Post Client`
 
-### v0.1.8-dev
+### v0.1.9-dev
+
+### v0.1.8
+
+> I tested the app on a mobile and found some minor issues.
+
+- [FIX] Small fixes and style improvements on DrawbarSideBar @christianmotta
 
 ### v0.1.7
 
