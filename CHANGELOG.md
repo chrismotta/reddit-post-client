@@ -2,6 +2,10 @@
 
 ### v0.1.7-dev
 
+- [ENH] Dismiss button added to PostReview @christianmotta
+- [ENH] Loading spinner added to Show More button @christianmotta
+- [FIX] Dismiss button alignment issue fixed @christianmotta
+
 ### v0.1.6
 
 > The application is deployed with Vercel. I only had to add @types/node and the deployment process was successful.

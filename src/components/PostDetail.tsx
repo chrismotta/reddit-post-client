@@ -1,15 +1,34 @@
-import { Box, Flex, forwardRef, Heading, Spacer } from "@chakra-ui/react";
+import { DeleteIcon } from "@chakra-ui/icons";
+import {
+  Box,
+  Center,
+  Flex,
+  forwardRef,
+  Heading,
+  IconButton,
+  Spacer,
+} from "@chakra-ui/react";
 import { isValidMotionProp, motion } from "framer-motion";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Dispatch } from "redux";
+import { dismissPost } from "../store/actions";
 
 import EmptyPostDetail from "./EmptyPostDetail";
 import ImageContainer from "./ImageContainer";
 import NoImageContainer from "./NoImageContainer";
 
 function PostDetail() {
+  const dispatch: Dispatch<PostAction> = useDispatch();
   const selectedPost: IPost | undefined = useSelector((state: PostState) =>
     state.postList.find((post) => post.id === state.selectedPostId)
   );
+
+  const handleDismiss = (e: MouseEvent) => {
+    e.stopPropagation();
+    if (selectedPost) {
+      dispatch(dismissPost(selectedPost.id));
+    }
+  };
 
   if (!selectedPost) {
     return <EmptyPostDetail />;
@@ -40,9 +59,22 @@ function PostDetail() {
         maxW="800px"
         overflowY="auto"
       >
-        <Heading size="md" pt="10px" px="20px">
-          {selectedPost.author}
-        </Heading>
+        <Center position="relative" w="full">
+          <Heading size="md" pt="10px" px="20px">
+            {selectedPost.author}
+          </Heading>
+          <IconButton
+            title="Dismiss Post"
+            aria-label="Dismiss Post"
+            icon={<DeleteIcon />}
+            size="md"
+            variant="ghost"
+            position="absolute"
+            top="0px"
+            right="0px"
+            onClick={handleDismiss}
+          />
+        </Center>
         {selectedPost.image && (
           <ImageContainer
             src={selectedPost.image}

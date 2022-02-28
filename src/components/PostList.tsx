@@ -63,6 +63,9 @@ function PostList() {
                 w="full"
                 colorScheme="purple"
                 onClick={handleShowMore}
+                disabled={isLoading}
+                isLoading={isLoading}
+                loadingText="Loading Posts..."
               >
                 Show More Posts
               </Button>

@@ -76,7 +76,7 @@ function Post({ data, selected, opened }: Props) {
             <ViewOffIcon boxSize="50px" color="gray.400" />
           </Center>
         )}
-        <Box>
+        <Box w="full">
           <Flex alignItems="baseline">
             <Text fontSize="xs" color="gray.600">
               {data.created} :: {data.numComments} comments
